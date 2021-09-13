@@ -6,6 +6,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 require('./server/routes/player.routes')(app);
-app.listen(8002, () => {
-    console.log(`Listening on port: 8002`);
+app.listen(8003, () => {
+    console.log(`Listening on port: 8003`);
 });

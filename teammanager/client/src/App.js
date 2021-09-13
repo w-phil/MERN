@@ -2,31 +2,31 @@
 //import './App.css';
 import React from 'react';
 import {
+  Link,
   Switch,
   Route,
 } from "react-router-dom";
 
-import List from './views/List';
+import Main from './views/Main';
 import New from './views/New';
 import Status from './views/Status';
 
 function App() {
   return (
     <div className="App">
-      <h3><span>Manage Players</span> | <span>Mangae Player Status</span></h3>
+      <Link to="/players/list"><span>Manage Players</span></Link>| <Link to="/game/status/1"><span>Manage Player Status</span></Link>
       <div>
-        <h1><span>List</span> | <span>Add Player</span></h1>
-        <Switch>
-          <Route exact path="/players/list">
-            <List />
-          </Route>
-          <Route path="/players/addplayer">
-            <New />
-          </Route>
-          <Route path="/game/status/:id">         
-            <Status />     
-          </Route>    
-        </Switch>
+          <Switch>
+            <Route exact path="/players/list">
+              <Main />
+            </Route>
+            <Route path="/players/addplayer">
+              <New />
+            </Route>
+            <Route path="/game/status/:id">         
+              <Status />     
+            </Route>    
+          </Switch>
       </div>
     </div>
   );
